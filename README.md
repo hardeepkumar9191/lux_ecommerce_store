@@ -1,16 +1,54 @@
-# luxe_jewelry_studio
+# 💎 Luxe Jewelry Studio - Flutter Ecommerce App
 
-A new Flutter project.
+A professional Flutter ecommerce application for custom jewelry with multi-platform integration capabilities.
 
-## Getting Started
+## 🌟 Features
 
-This project is a starting point for a Flutter application.
+### Core Functionality
+- ✅ Product catalog with filtering
+- ✅ Shopping cart management  
+- ✅ Secure checkout process
+- ✅ Custom jewelry configurator
+- ✅ Admin dashboard
 
-A few resources to get you started if this is your first Flutter project:
+### Payment Integration
+- 💳 Stripe payment processing
+- 🅿️ PayPal integration ready
+- 📱 Apple Pay/Google Pay support
+- 🔒 Secure transaction handling
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Platform Integrations
+- 🛍️ **Shopify** - Product sync & order management
+- 🎨 **Etsy** - Handcrafted jewelry imports
+- 🌐 **WooCommerce** - WordPress integration
+- 📊 Real-time inventory management
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Getting Started
+
+### Prerequisites
+- Flutter SDK (>=2.17.0)
+- Dart SDK
+- iOS Simulator / Android Emulator
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/hardeepkumar9191/lux_ecommerce_store.git
+cd lux_ecommerce_store
+
+# Install dependencies
+flutter pub get
+
+# Run the app
+flutter run
+
+📱 Screenshots
+Screenshots coming soon
+🛠️ Tech Stack
+
+Frontend: Flutter/Dart
+State Management: Provider
+HTTP Client: Dio
+Payment: Stripe SDK
+Storage: Hive (local), SharedPreferences
+Image Handling: Cached Network Image
