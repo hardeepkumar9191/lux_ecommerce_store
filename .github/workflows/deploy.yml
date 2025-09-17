@@ -28,14 +28,14 @@ jobs:
     - name: Setup Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.16.0'
+        flutter-version: '3.24.0'
         channel: 'stable'
         
     - name: Install dependencies
       run: flutter pub get
       
     - name: Build web
-      run: flutter build web --release --web-renderer canvaskit --base-href "/ecommerce_store/"
+      run: flutter build web --release --base-href "/ecommerce_store/"
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
