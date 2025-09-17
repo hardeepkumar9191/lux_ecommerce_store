@@ -39,6 +39,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./build/web
+          artifact_name: github-pages   # 👈 Must match deploy
 
   deploy:
     needs: build
@@ -50,3 +51,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+        with:
+          artifact_name: github-pages   # 👈 Must match build
