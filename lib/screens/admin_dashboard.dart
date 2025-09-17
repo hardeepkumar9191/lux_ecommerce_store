@@ -1,6 +1,8 @@
-// screens/admin_dashboard.dart
+// lib/screens/admin_dashboard.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/product.dart';
+import '../services/inventory_service.dart';
 
 class AdminDashboard extends StatefulWidget {
   @override

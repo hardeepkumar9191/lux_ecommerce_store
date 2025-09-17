@@ -1,6 +1,8 @@
-// screens/product_detail_screen.dart
+// lib/screens/product_detail_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/product.dart';
+import '../models/cart.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   @override
@@ -92,7 +94,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         ),
         SizedBox(height: 12),
         Text(
-          '\${product.price.toStringAsFixed(2)}',
+          '\$${product.price.toStringAsFixed(2)}',
           style: TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
@@ -226,7 +228,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       height: 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Theme.of(context).primaryColor,
+          backgroundColor: Theme.of(context).primaryColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         ),
         onPressed: product.stockQuantity > 0 ? () {

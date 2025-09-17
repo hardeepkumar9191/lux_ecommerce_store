@@ -1,6 +1,8 @@
-// screens/checkout_screen.dart
+// lib/screens/checkout_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/cart.dart';
+import '../services/payment_service.dart';
 
 class CheckoutScreen extends StatefulWidget {
   @override
@@ -70,7 +72,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   Expanded(
                     child: Text('${item.product.name} x${item.quantity}'),
                   ),
-                  Text('\${item.totalPrice.toStringAsFixed(2)}'),
+                  Text('\$${item.totalPrice.toStringAsFixed(2)}'),
                 ],
               ),
             )).toList(),
@@ -79,7 +81,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Total', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                Text('\${cart.totalAmount.toStringAsFixed(2)}', 
+                Text('\$${cart.totalAmount.toStringAsFixed(2)}', 
                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
               ],
             ),
@@ -223,13 +225,13 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       height: 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Theme.of(context).primaryColor,
+          backgroundColor: Theme.of(context).primaryColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
         ),
         onPressed: isProcessing ? null : () => _processOrder(cart),
         child: isProcessing 
           ? CircularProgressIndicator(color: Colors.white)
-          : Text('Place Order - \${cart.totalAmount.toStringAsFixed(2)}', 
+          : Text('Place Order - \$${cart.totalAmount.toStringAsFixed(2)}', 
                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
       ),
     );

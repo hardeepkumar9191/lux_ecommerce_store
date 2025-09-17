@@ -1,4 +1,3 @@
-// main.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'models/product.dart';
@@ -28,10 +27,9 @@ class MyApp extends StatelessWidget {
         title: 'Luxe Jewelry Studio',
         theme: ThemeData(
           primarySwatch: Colors.amber,
-          primaryColor: Color(0xFFD4AF37), // Gold color
-          accentColor: Color(0xFF2C2C2C),
-          fontFamily: 'Playfair',
+          primaryColor: Color(0xFFD4AF37),
           visualDensity: VisualDensity.adaptivePlatformDensity,
+          useMaterial3: false, // Use Material 2 for compatibility
         ),
         initialRoute: '/',
         routes: {

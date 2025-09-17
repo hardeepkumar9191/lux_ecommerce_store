@@ -1,6 +1,8 @@
 // screens/home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/product.dart';
+import '../models/cart.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -193,32 +195,32 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _buildCategoryFilter() {
-    final categories = ['All', 'Rings', 'Necklaces', 'Bracelets', 'Earrings'];
-    
-    return Container(
-      height: 60,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: categories.length,
-        itemBuilder: (context, index) {
-          final category = categories[index];
-          final isSelected = category == selectedCategory;
-          
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: isSelected ? Theme.of(context).primaryColor : Colors.grey.shade200,
-                onPrimary: isSelected ? Colors.white : Colors.black,
-              ),
-              onPressed: () => _filterProducts(category),
-              child: Text(category),
+  final categories = ['All', 'Rings', 'Necklaces', 'Bracelets', 'Earrings'];
+  
+  return Container(
+    height: 60,
+    child: ListView.builder(
+      scrollDirection: Axis.horizontal,
+      itemCount: categories.length,
+      itemBuilder: (context, index) {
+        final category = categories[index];
+        final isSelected = category == selectedCategory;
+        
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isSelected ? Theme.of(context).primaryColor : Colors.grey.shade200,
+              foregroundColor: isSelected ? Colors.white : Colors.black,
             ),
-          );
-        },
-      ),
-    );
-  }
+            onPressed: () => _filterProducts(category),
+            child: Text(category),
+          ),
+        );
+      },
+    ),
+  );
+}
 
   Widget _buildProductGrid() {
     return GridView.builder(

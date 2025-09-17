@@ -1,6 +1,7 @@
-// screens/cart_screen.dart
+// lib/screens/cart_screen.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../models/cart.dart';
 
 class CartScreen extends StatelessWidget {
   @override
@@ -87,7 +88,7 @@ class CartScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    '\${item.product.price.toStringAsFixed(2)}',
+                    '\$${item.product.price.toStringAsFixed(2)}',
                     style: TextStyle(
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w600,
@@ -149,7 +150,7 @@ class CartScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Subtotal:', style: TextStyle(fontSize: 16)),
-              Text('\${cart.totalAmount.toStringAsFixed(2)}', 
+              Text('\$${cart.totalAmount.toStringAsFixed(2)}', 
                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             ],
           ),
@@ -166,7 +167,7 @@ class CartScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Total:', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-              Text('\${cart.totalAmount.toStringAsFixed(2)}', 
+              Text('\$${cart.totalAmount.toStringAsFixed(2)}', 
                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, 
                                    color: Theme.of(context).primaryColor)),
             ],
@@ -177,7 +178,7 @@ class CartScreen extends StatelessWidget {
             height: 50,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Theme.of(context).primaryColor,
+                backgroundColor: Theme.of(context).primaryColor,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
               ),
               onPressed: () => Navigator.pushNamed(context, '/checkout'),

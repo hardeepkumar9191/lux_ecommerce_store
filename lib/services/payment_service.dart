@@ -1,7 +1,5 @@
-// services/payment_service.dart
 import 'dart:async';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 class PaymentService {
   static const String _stripePublishableKey = 'pk_test_your_stripe_key_here';
@@ -44,6 +42,8 @@ class PaymentService {
     required String currency,
   }) async {
     // This would be implemented with actual Stripe API calls
+    // For now, we'll simulate the API call
+    await Future.delayed(Duration(milliseconds: 500));
     return {
       'id': 'pi_demo_${DateTime.now().millisecondsSinceEpoch}',
       'client_secret': 'demo_client_secret',
